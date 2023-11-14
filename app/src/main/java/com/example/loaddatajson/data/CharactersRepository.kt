@@ -8,10 +8,10 @@ interface CharactersRepository{
 }
 
 class DefaultCharactersRepository(
-    private val CharactersApiService: CharacterApiService
+    private val charactersApiService: CharacterApiService
 ) : CharactersRepository
 {
     override suspend fun getCharacters(): List<Character> {
-        return CharactersApiService.getCharacters()
+        return charactersApiService.getCharacters()
     }
 }

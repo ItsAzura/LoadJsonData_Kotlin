@@ -46,7 +46,7 @@ class CharacterViewModel (private val charactersRepository: CharactersRepository
         val Factory: ViewModelProvider.Factory = viewModelFactory {
             initializer {
                 val application = (this[ViewModelProvider.AndroidViewModelFactory.APPLICATION_KEY] as CharacterApplication)
-                val charactersRepository = application.container.CharactersRepository
+                val charactersRepository = application.container.charactersRepository
                 CharacterViewModel(charactersRepository = charactersRepository)
             }
         }

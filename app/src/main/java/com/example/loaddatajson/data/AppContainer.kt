@@ -7,7 +7,7 @@ import okhttp3.MediaType.Companion.toMediaType
 import retrofit2.Retrofit
 
 interface AppContainer {
-    val CharactersRepository: CharactersRepository
+    val charactersRepository: CharactersRepository
 }
 
 class DefaultAppContainer : AppContainer{
@@ -22,9 +22,8 @@ class DefaultAppContainer : AppContainer{
         retrofit.create(CharacterApiService::class.java)
     }
 
-    override val CharactersRepository: CharactersRepository by lazy{
+    override val charactersRepository: CharactersRepository by lazy{
         DefaultCharactersRepository(retrofitService)
     }
-
 
 }

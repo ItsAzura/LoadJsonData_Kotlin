@@ -7,7 +7,7 @@ import kotlinx.serialization.json.Json
 @Serializable
 data class Character(
     @SerialName("id")
-    val Id: Int,
+    val id: Int,
     @SerialName("name")
     val name: String,
     @SerialName("slug")
