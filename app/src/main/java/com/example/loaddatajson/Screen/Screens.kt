@@ -1,6 +1,7 @@
 package com.example.loaddatajson.Screen
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -17,6 +18,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -74,10 +76,19 @@ fun ErrorScreen(retryAction: () -> Unit, modifier: Modifier = Modifier) {
 @Composable
 fun CharacterCard(character: Character, modifier: Modifier = Modifier){
     Card(
-        modifier = modifier,
+        modifier = modifier
+            .background(Color.Cyan)
+            .padding(
+            start = 10.dp,
+            bottom = 6.dp
+        ),
         shape = RoundedCornerShape(8.dp)
     ) {
         Column(
+            modifier = modifier
+                .background(Color.Cyan)
+                .padding(start = 10.dp,
+                bottom = 6.dp),
             horizontalAlignment = Alignment.Start
         ) {
             Text(
@@ -87,36 +98,42 @@ fun CharacterCard(character: Character, modifier: Modifier = Modifier){
                     .padding(6.dp),
                 style = MaterialTheme.typography.titleLarge,
                 fontWeight = FontWeight.Bold,
-                textAlign = TextAlign.Start
+                textAlign = TextAlign.Start,
+                color = Color.White
             )
             Text(
                 text = "Gender: ${character.gender}",
                 style = MaterialTheme.typography.titleMedium,
                 textAlign = TextAlign.Start,
+                color = Color.White,
                 modifier = Modifier.padding(2.dp)
             )
             Text(
                 text = "Rarity: ${character.rarity} Stars",
                 style = MaterialTheme.typography.titleMedium,
                 textAlign = TextAlign.Start,
+                color = Color.White,
                 modifier = Modifier.padding(2.dp)
             )
             Text(
                 text = "vision: ${character.vision}",
                 style = MaterialTheme.typography.titleMedium,
                 textAlign = TextAlign.Start,
+                color = Color.White,
                 modifier = Modifier.padding(2.dp)
             )
             Text(
                 text = "Weapon: ${character.weapon}",
                 style = MaterialTheme.typography.titleMedium,
                 textAlign = TextAlign.Start,
+                color = Color.White,
                 modifier = Modifier.padding(2.dp)
             )
             Text(
                 text = "Description: ${character.description}",
                 style = MaterialTheme.typography.titleMedium,
                 textAlign = TextAlign.Start,
+                color = Color.White,
                 modifier = Modifier.padding(2.dp)
             )
 
